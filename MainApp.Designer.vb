@@ -42,12 +42,10 @@ Partial Class MainApp
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TimeLabel = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataPatient, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AlarmBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Alarm_infuseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DateNow
@@ -96,11 +94,13 @@ Partial Class MainApp
         'DataPatient
         '
         Me.DataPatient.AllowUserToAddRows = False
-        Me.DataPatient.AllowUserToDeleteRows = False
         Me.DataPatient.AutoGenerateColumns = False
+        Me.DataPatient.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.DataPatient.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataPatient.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PatientDataGridViewTextBoxColumn, Me.EndatDataGridViewTextBoxColumn, Me.InfusecategoryDataGridViewTextBoxColumn, Me.Status})
         Me.DataPatient.DataSource = Me.AlarmBindingSource
+        Me.DataPatient.GridColor = System.Drawing.SystemColors.ActiveCaption
         Me.DataPatient.Location = New System.Drawing.Point(14, 117)
         Me.DataPatient.Name = "DataPatient"
         Me.DataPatient.ReadOnly = True
@@ -157,7 +157,7 @@ Partial Class MainApp
         Me.PlaySound.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue
         Me.PlaySound.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.PlaySound.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.PlaySound.Location = New System.Drawing.Point(216, 57)
+        Me.PlaySound.Location = New System.Drawing.Point(14, 32)
         Me.PlaySound.Name = "PlaySound"
         Me.PlaySound.Size = New System.Drawing.Size(109, 28)
         Me.PlaySound.TabIndex = 7
@@ -170,7 +170,7 @@ Partial Class MainApp
         Me.StopSound.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
         Me.StopSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.StopSound.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.StopSound.Location = New System.Drawing.Point(365, 57)
+        Me.StopSound.Location = New System.Drawing.Point(14, 66)
         Me.StopSound.Name = "StopSound"
         Me.StopSound.Size = New System.Drawing.Size(109, 28)
         Me.StopSound.TabIndex = 8
@@ -194,24 +194,12 @@ Partial Class MainApp
         'Timer2
         '
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.Alarm_Infus.My.Resources.Resources.logo_kariadi
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.InitialImage = Nothing
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 27)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(177, 79)
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
-        '
         'MainApp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(765, 535)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.StopSound)
         Me.Controls.Add(Me.PlaySound)
         Me.Controls.Add(Me.DataPatient)
@@ -225,13 +213,12 @@ Partial Class MainApp
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainApp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Aplikasi Alarm Infus - RSUP Dr. Kariadi Semarang"
+        Me.Text = "Aplikasi Alarm Infus"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.DataPatient, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AlarmBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Alarm_infuseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -247,7 +234,6 @@ Partial Class MainApp
     Friend WithEvents RefreshDataToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PlaySound As Button
     Friend WithEvents StopSound As Button
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents TimeLabel As Label
     Friend WithEvents PatientDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

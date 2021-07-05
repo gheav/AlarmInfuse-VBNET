@@ -27,7 +27,7 @@ Public Class AlarmForm
         Finally
             connection.Dispose()
         End Try
-        Close()
+        Me.Close()
     End Sub
 
     Private Sub cancelButton_Click(sender As Object, e As EventArgs) Handles DiscardButton.Click
@@ -35,5 +35,7 @@ Public Class AlarmForm
         Close()
     End Sub
 
+    Private Sub AlarmForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class
